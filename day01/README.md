@@ -1,14 +1,20 @@
-# Day 01 - Assignment
+# Day 01 - Personal Website Setup & Jekyll Configuration
 
-## Overview
-In this assignment, I set up my personal academic website hosted on GitHub Pages using Jekyll.
+## Objective
+Establish a public academic portfolio website hosted on GitHub Pages using GitHub Flavored Markdown and Jekyll templating.
 
-## Tasks Completed
-1. Created the repository `python-course-assignments`.
-2. Created `index.md` containing my academic background, current research, and goals for the Python course.
-3. Configured `_config.yml` using the Cayman theme (`jekyll-theme-cayman`).
-4. Enabled GitHub Pages under repository settings.
+## What I Did
+1. Created a dedicated user repository: `taliweizmann.github.io`.
+2. Created `index.md` containing my academic background in Biomedical Engineering, current M.Sc. studies at the Weizmann Institute (Computational and Systems Biology), and research goals.
+3. Created `_config.yml` configuring the Jekyll theme (`jekyll-theme-cayman`).
+4. Enabled GitHub Pages deployment from the `main` branch.
 
-## Prompts Used
-Prompt used to draft and structure the web page content and Jekyll configuration:
-> "Write the markdown content for my personal academic page including background in Biomedical Engineering, MSc at Weizmann Institute, lab rotation research, and goals for learning Python in data automation and biological workflows."
+## Live Website & Repositories
+- **Live Website:** [https://taliweizmann.github.io/](https://taliweizmann.github.io/)
+- **Website Source Repository:** [https://github.com/taliweizmann/taliweizmann.github.io](https://github.com/taliweizmann/taliweizmann.github.io)
+- **Assignments Repository:** [https://github.com/taliweizmann/python-course-assignments](https://github.com/taliweizmann/python-course-assignments)
+
+## AI Prompts Used
+To structure the markdown and front-matter configuration, I utilized the following prompts:
+- *"Draft a structured markdown portfolio page highlighting a B.Sc. in Biomedical Engineering (Technion), M.Sc. studies at the Weizmann Institute, experimental handling of biological tables/assays, and goals for Python automation."*
+- *"Provide the minimal `_config.yml` setup for enabling the Cayman Jekyll theme on GitHub Pages."*
