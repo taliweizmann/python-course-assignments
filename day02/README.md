@@ -7,5 +7,5 @@ Markdown
 - Configured Git tracking and synced changes to GitHub.
 
 ## Peer Review Issues Opened
-- Issue 1 opened on peer repository: [Insert Link 1]
-- Issue 2 opened on peer repository: [Insert Link 2]
+- Issue 1 opened on peer repository: [(https://github.com/EladBio/course-assignments/issues/1)]
+- Issue 2 opened on peer repository: [(https://github.com/eladit6789/wis-python-course-assignments/issues/1)]
