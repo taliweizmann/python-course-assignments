@@ -1,4 +1,13 @@
-Hi,
-My name is tali lerner and here are my python course assigments files.
-Im very very sorry for submitting late, won't happen again, and I really appreatiate the understanding and second-chance.
-looking forward to learn more and improve my programming skills. 
+# WIS Python Course Assignments (Autumn 2026)
+
+This repository contains my solutions, code exercises, and project documentation for the Python programming course at the Weizmann Institute of Science.
+
+## Structure
+- `day01/`: Documentation and prompts used for setting up the personal GitHub Pages website.
+- `day02/`: Initial setup, first script (`hello.py`), and peer review records.
+- *(Subsequent assignment folders will be added weekly)*
+
+## Author
+- **Name:** Tali Lerner
+- **Personal Academic Website:** https://taliweizmann.github.io/
+- **GitHub:** [@taliweizmann](https://github.com/taliweizmann)
