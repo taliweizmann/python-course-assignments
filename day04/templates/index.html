@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Longest Common Substring Finder</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            max-width: 650px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+        h2 {
+            margin-top: 0;
+            color: #1b5e20;
+        }
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            background-color: #1b5e20;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        button:hover {
+            background-color: #2e7d32;
+        }
+        .result-box {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            border-radius: 6px;
+        }
+        .match-seq {
+            font-family: monospace;
+            font-size: 1.15rem;
+            color: #0d5302;
+            word-break: break-all;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🧬 DNA Longest Common Substring</h2>
+        <p>Enter two DNA sequences to find their longest identical contiguous segment.</p>
+        
+        <form method="POST">
+            <label for="seq1">Sequence 1:</label>
+            <input type="text" id="seq1" name="seq1" value="{{ seq1 }}" placeholder="e.g. ATGCGATCGATCGTAGCTA" required>
+
+            <label for="seq2">Sequence 2:</label>
+            <input type="text" id="seq2" name="seq2" value="{{ seq2 }}" placeholder="e.g. CGATCGTAGCTAGGACTGA" required>
+
+            <button type="submit">Analyze Substring</button>
+        </form>
+
+        {% if common_sub is not none %}
+        <div class="result-box">
+            <h3>Alignment Result:</h3>
+            <p><strong>Longest Common Substring:</strong> <span class="match-seq">{{ common_sub if common_sub else 'No common sequence found' }}</span></p>
+            <p><strong>Length:</strong> {{ sub_length }} bp</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
