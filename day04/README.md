@@ -15,3 +15,11 @@ Convert the Day 03 command-line biological calculation (DNA Longest Common Subst
 1. **Install Flask:**
    ```bash
    pip install flask
+
+## Running Automated Tests (Day 05)
+
+Unit tests for the core business logic (`find_longest_common_substring` in `lcs_finder.py`) are located in `test_lcs.py`.
+
+1. **Install pytest:**
+   ```bash
+   pip install pytest
