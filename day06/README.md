@@ -13,6 +13,3 @@ Building on the Day 04/05 Flask LCS application, I added file handling and seque
 pip install -r requirements.txt
 pytest
 python app.py
-
-## Interaction with AI
-I used an AI assistant to help design the parse_fasta_content() parser, add in-memory file upload handling and sample FASTA download routes in Flask (compatible with Render hosting), implement the non-DNA base warning alert following peer feedback, update the HTML template, and extend the pytest suite.
