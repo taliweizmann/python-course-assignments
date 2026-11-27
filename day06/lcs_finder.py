@@ -1,3 +1,12 @@
+VALID_DNA_BASES = set("ACGTN")
+
+
+def find_invalid_bases(seq: str) -> list[str]:
+    """Return a sorted list of unique characters in the sequence that are not standard DNA bases (A, C, G, T, N)."""
+    cleaned = seq.strip().upper()
+    return sorted({char for char in cleaned if char not in VALID_DNA_BASES})
+
+
 def parse_fasta_content(raw_text: str, default_name: str = "Sequence") -> tuple[str, str]:
     """Parse raw text or FASTA-formatted text into (sequence_name, cleaned_sequence)."""
     lines = [line.strip() for line in raw_text.strip().splitlines() if line.strip()]
@@ -56,9 +65,18 @@ def analyze_sequences(
     default_name1: str = "Sequence 1",
     default_name2: str = "Sequence 2",
 ) -> dict:
-    """Parse two raw/FASTA inputs, find the longest shared motif, and return summary stats."""
+    """Parse two raw/FASTA inputs, check for invalid bases, find the longest shared motif, and return stats."""
     name1, s1 = parse_fasta_content(raw_seq1, default_name=default_name1)
     name2, s2 = parse_fasta_content(raw_seq2, default_name=default_name2)
+
+    invalid_1 = find_invalid_bases(s1)
+    invalid_2 = find_invalid_bases(s2)
+
+    warnings = []
+    if invalid_1:
+        warnings.append(f"{name1} contains non-DNA characters: {', '.join(invalid_1)}")
+    if invalid_2:
+        warnings.append(f"{name2} contains non-DNA characters: {', '.join(invalid_2)}")
 
     forward_match = find_longest_common_substring(s1, s2)
     best_match = forward_match
@@ -80,4 +98,5 @@ def analyze_sequences(
         "length": len(best_match),
         "strand": strand,
         "gc_content": calculate_gc_content(best_match),
+        "warnings": warnings,
     }
