@@ -1,6 +1,7 @@
 from lcs_finder import (
     analyze_sequences,
     calculate_gc_content,
+    find_invalid_bases,
     find_longest_common_substring,
     parse_fasta_content,
     reverse_complement,
@@ -35,6 +36,11 @@ def test_gc_content():
     assert calculate_gc_content("ATGC") == 50.0
 
 
+def test_invalid_bases_detection():
+    assert find_invalid_bases("ATGCHX") == ["H", "X"]
+    assert find_invalid_bases("ACGTN") == []
+
+
 def test_analyze_fasta_inputs_with_reverse_complement():
     fasta1 = ">SeqA\nAAACCCGATTACATTT\n"
     fasta2 = ">SeqB\nGGGTAATGTAATCAAA\n"
@@ -44,3 +50,10 @@ def test_analyze_fasta_inputs_with_reverse_complement():
     assert res["substring"] == "GATTACA"
     assert res["length"] == 7
     assert "Reverse Complement" in res["strand"]
+    assert res["warnings"] == []
+
+
+def test_analyze_warns_on_non_dna_characters():
+    res = analyze_sequences("ATGCH", "ATGCG")
+    assert len(res["warnings"]) == 1
+    assert "H" in res["warnings"][0]
